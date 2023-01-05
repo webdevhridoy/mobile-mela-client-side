@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../asset/logo/Mobilemela.png';
+import { authContext } from '../../../Context/AuthProvider';
 import './Header.css';
 
 const Header = () => {
+    const { user } = useContext(authContext);
     const menuItems = <>
         <li>
             <Link className='text-md font-semibold  ' to='/'>Home</Link>
@@ -42,7 +44,15 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end ">
-                <Link to='/login' className="text-white rounded duration-700 ease-linear btn md:btn-md btn-sm bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-r hover:from-primary hover:to-secondary">Get started</Link>
+                {user?.uid || user?.email ?
+                    <>
+                        <Link to='/dashboard' className="text-white rounded duration-700 ease-linear btn md:btn-md btn-sm bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-r hover:from-primary hover:to-secondary">Dashboard</Link>
+                    </>
+                    :
+                    <>
+                        <Link to='/login' className="text-white rounded duration-700 ease-linear btn md:btn-md btn-sm bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-r hover:from-primary hover:to-secondary">Get started</Link>
+                    </>
+                }
             </div>
         </div>
     );

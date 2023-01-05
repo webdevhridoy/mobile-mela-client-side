@@ -1,16 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { authContext } from '../../../Context/AuthProvider';
 import Loader from '../../shared/Loader/Loader';
 
-const AddProduct = () => {
+const UpdateMyProduct = () => {
+    const { updateProducts } = useLoaderData();
+    console.log(updateProducts);
     // useTitle('Add Products');
     const { register, handleSubmit } = useForm();
     const { user } = useContext(authContext);
-    // const [isSeller, isSellerLoading] = useSeller(user?.email);
-    // const [isAdmin, isAdminLoading] = useAdmin(user?.email);
 
 
     const { data: categories = [], isLoading } = useQuery({
@@ -144,11 +145,11 @@ const AddProduct = () => {
                 </div>
 
                 <div className="flex flex-col w-full rounded ng-untouched ng-pristine ng-valid">
-                    <button type="submit" className="hover:text-white text-xl bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-r hover:from-primary hover:to-secondary transition rounded text-white px-4 py-2 sm:py-3 mr-2 capitalize w-full">Add Now</button>
+                    <button type="submit" className="hover:text-white text-xl bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-r hover:from-primary hover:to-secondary transition rounded text-white px-4 py-2 sm:py-3 mr-2 capitalize w-full">Update now</button>
                 </div>
             </form>
         </div>
     );
 };
 
-export default AddProduct;
+export default UpdateMyProduct;
