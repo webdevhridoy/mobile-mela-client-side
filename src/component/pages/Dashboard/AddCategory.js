@@ -27,7 +27,7 @@ const AddCategory = () => {
                     };
                     //save information to the database 
 
-                    fetch('http://localhost:5000/categories', {
+                    fetch('https://mobile-mela-server-side.vercel.app/categories', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -9,12 +9,11 @@ const FeatureProduct = () => {
     const { data: products = [] } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/products');
+            const res = await fetch('https://mobile-mela-server-side-webdevhridoy.vercel.app/home-products');
             const data = await res.json();
             return data;
         }
     });
-    console.log(products);
     return (
         <div className='w-11/12 mx-auto p-5 md:p-10'>
             <div>
@@ -35,7 +34,7 @@ const FeatureProduct = () => {
                 }
             </div>
             <div className='py-6 w-72 mx-auto'>
-                <Link className='flex justify-between items-center hover:text-white text-xl bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-r hover:from-primary hover:to-secondary transition rounded text-white px-4 py-2 sm:py-3 mr-2 capitalize'>Explore all products
+                <Link to='/shop' className='flex justify-between items-center hover:text-white text-xl bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-r hover:from-primary hover:to-secondary transition rounded text-white px-4 py-2 sm:py-3 mr-2 capitalize'>Explore all products
                     <span className='ml-3 mt-1'>
                         <BsArrowRight></BsArrowRight>
                     </span>

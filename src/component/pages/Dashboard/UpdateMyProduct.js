@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const UpdateMyProduct = () => {
+    // const [categories, setCategories] = useState([]);
     const updateProducts = useLoaderData();
     const { productname, saleprice, originalprice, description } = updateProducts;
     console.log(updateProducts);
@@ -14,6 +15,13 @@ const UpdateMyProduct = () => {
 
     const utcDate = new Date().toLocaleString();
     // const imageHostKey = process.env.REACT_APP_imgbb_key;
+
+
+    // useEffect(() => {
+    //     fetch('https://mobile-mela-server-side.vercel.app/categories')
+    //         .then(res => res.json())
+    //         .then(data => setCategories(data));
+    // }, [categories]);
 
     const handleSignIn = (data, event) => {
         console.log(data);
@@ -44,7 +52,7 @@ const UpdateMyProduct = () => {
 
                     // save information to the database;
 
-                    fetch(`http://localhost:5000/products/${product._id}`, {
+                    fetch(`https://mobile-mela-server-side.vercel.app/products/${product._id}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json',

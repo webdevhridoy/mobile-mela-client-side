@@ -18,7 +18,7 @@ const Banner = () => {
                     <h1 className="text-white mb-5 text-3xl md:text-6xl font-semibold md:px-72 uppercase">
                         New smart phones
                     </h1>
-                    <Link to='/login' className="rounded duration-500 ease-linear btn md:btn-md btn-sm bg-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-white border-none">Buy now</Link>
+                    <Link to='/shop' className="rounded duration-500 ease-linear btn md:btn-md btn-sm bg-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-white border-none">Buy now</Link>
                 </div>
             </div>
         </div>

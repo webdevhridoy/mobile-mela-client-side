@@ -34,7 +34,7 @@ const SignUp = () => {
                     photoURL: data.photoURL,
                 };
 
-                fetch('http://localhost:5000/users', {
+                fetch('https://mobile-mela-server-side.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

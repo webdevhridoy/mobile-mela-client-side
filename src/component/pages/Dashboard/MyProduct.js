@@ -7,11 +7,12 @@ const MyProduct = () => {
     const { data: products = [] } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/products');
+            const res = await fetch('https://mobile-mela-server-side.vercel.app/products');
             const data = await res.json();
             return data;
         }
     });
+    console.log(products);
     return (
         <div className='p-5 border rounded-md bg-white'>
             <h2 className='text-start text-xl font-bold text-primary pb-5 uppercase'>Best Selling Phones</h2>

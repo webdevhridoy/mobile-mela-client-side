@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 
 const FeatureSignleProduct = ({ product }) => {
     const { productname, ramRom, img } = product;
-    console.log(product);
 
     return (
         <>
             <div className='border hover:shadow-lg duration-700'>
                 <figure className='flex justify-center items-center bg-[#ECECEA]'>
-                    <img className='object-cover' src={img} alt="" />
+                    <img className='w-72 h-auto' src={img} alt="" />
                 </figure>
                 <div className='pr-2 py-2'>
                     <div className='pt-2 pl-3 py-2'>

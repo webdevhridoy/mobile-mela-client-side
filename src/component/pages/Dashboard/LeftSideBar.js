@@ -48,7 +48,7 @@ const LeftSideBar = () => {
                     {
                         user?.uid || user?.email || user?.photoURL ?
                             <>
-                                <img className='rounded-full lg:w-24 md:w-20' src={user?.photoURL} alt="" />
+                                <img className='rounded-full w-24 md:w-20' src={user?.photoURL} alt="" />
                             </>
                             :
                             <>

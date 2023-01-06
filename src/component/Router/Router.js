@@ -72,7 +72,7 @@ export const routes = createBrowserRouter([
                     },
                     {
                         path: '/dashboard/product/edit/:id',
-                        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`),
+                        loader: ({ params }) => fetch(`https://mobile-mela-server-side.vercel.app/products/${params.id}`),
                         element: <UpdateMyProduct></UpdateMyProduct>
                     },
                 ]
