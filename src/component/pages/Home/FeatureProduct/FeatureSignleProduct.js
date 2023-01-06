@@ -14,7 +14,7 @@ const FeatureSignleProduct = ({ product }) => {
                 </figure>
                 <div className='pr-2 py-2'>
                     <div className='pt-2 pl-3 py-2'>
-                        <h2 className='text-lg font-semibold uppercase'>{productname}</h2>
+                        <h2 className='text-base font-semibold uppercase'>{productname}</h2>
                         <p className='text-gray-500 text-center text-xl font-semibold'>Price: $<span>125</span>.00</p>
                     </div>
                     <ul className='flex justify-between items-center pt-2 pl-3 py-2'>
